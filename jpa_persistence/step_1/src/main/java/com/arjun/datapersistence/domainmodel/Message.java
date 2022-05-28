@@ -1,4 +1,4 @@
-package com.arjun.datapersistence.ch02;
+package com.arjun.datapersistence.domainmodel;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -8,6 +8,8 @@ import javax.persistence.Persistence;
 
 import org.junit.jupiter.api.Test;
 
+import com.arjun.datapersistence.domainmodel.Message;
+
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;;
 
