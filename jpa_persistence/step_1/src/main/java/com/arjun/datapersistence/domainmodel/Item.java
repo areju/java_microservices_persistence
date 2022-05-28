@@ -5,9 +5,14 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -27,11 +32,27 @@ public class Item {
 
 	@Future
 	private Date auctionDate;
+	
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Bid.class)
+    @JoinTable(name = "ITEM_BIDS", joinColumns = { @JoinColumn(name = "ITEM_ID") }, inverseJoinColumns = { @JoinColumn(name = "BID_ID") })
 	private Set<Bid> bids = new HashSet<>();
 	
 	@Id
 	@GeneratedValue
 	private Long id;
+	
+
+
+	private float buyNowPrice;
+	
+	public float getBuyNowPrice() {
+		return buyNowPrice;
+	}
+
+
+	public void setBuyNowPrice(float buyNowPrice) {
+		this.buyNowPrice = buyNowPrice;
+	}
 	
 	public Date getAuctionDate() {
 		return auctionDate;
