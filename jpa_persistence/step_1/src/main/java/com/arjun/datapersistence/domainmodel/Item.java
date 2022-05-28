@@ -31,7 +31,7 @@ public class Item {
 	private String name;
 
 	@Future
-	private Date auctionDate;
+	private Date auctionEnd;
 	
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = Bid.class)
     @JoinTable(name = "ITEM_BIDS", joinColumns = { @JoinColumn(name = "ITEM_ID") }, inverseJoinColumns = { @JoinColumn(name = "BID_ID") })
@@ -55,12 +55,12 @@ public class Item {
 	}
 	
 	public Date getAuctionDate() {
-		return auctionDate;
+		return auctionEnd;
 	}
 
 
 	public void setAuctionDate(Date auctionDate) {
-		this.auctionDate = auctionDate;
+		this.auctionEnd = auctionDate;
 	}
 
 
