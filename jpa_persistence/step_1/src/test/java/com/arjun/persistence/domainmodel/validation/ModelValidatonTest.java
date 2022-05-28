@@ -17,9 +17,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.arjun.datapersistence.domainmodel.Item;
 
-public class ModelValidaton {
+public class ModelValidatonTest {
 	@Test
-	public void validateItem() {
+	public void validateItemTest() {
 		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 		Validator validator = factory.getValidator();
 		
